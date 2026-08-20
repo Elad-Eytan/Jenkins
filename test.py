@@ -8,5 +8,7 @@ with open(file_path, "r") as file:
 
     if word_to_find in content:
         print(f"{word_to_find} is in the file!!!")
+        sys.exit(0)
     else:
         print(f"{word_to_find} is not in the file!!!")
+        sys.exit(1)
