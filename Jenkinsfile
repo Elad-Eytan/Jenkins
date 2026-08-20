@@ -1,26 +1,30 @@
-pipeline{
+pipeline {
     agent any
 
     stages {
         stage('Build') {
             steps {
                 sh 'echo "================<Build stage>=================="'
+            }
         }
-        stage('Test')
+
+        stage('Test') {
             steps {
                 sh 'echo "================<Test stage>=================="'
+            }
         }
-        stage('Deploy')
+
+        stage('Deploy') {
             steps {
                 sh 'echo "================<Deploy stage>=================="'
+            }
         }
     }
 
     post {
         always {
-            sh 'echo "Cleaning up...'
+            sh 'echo "Cleaning up..."'
             deleteDir()
         }
-    }
     }
 }
