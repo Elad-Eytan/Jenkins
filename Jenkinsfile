@@ -6,7 +6,7 @@ pipeline {
         APP_NAME    = 'EladApp'
         DOCKER_REPO = 'vocvoc1'
     }
-    
+
     stages {
         stage('Build') {
             steps {
@@ -29,8 +29,8 @@ pipeline {
                     exit 1
                 fi
                 '''
-                sh 'echo "The Pipeline name is ${env.JOB_NAME}"'
-                sh 'echo "The Build number is ${env.BUILD_NUMBER}"'
+                sh 'echo "The Pipeline name is $JOB_NAME"'
+                sh 'echo "The Build number is $BUILD_NUMBER"'
             }
         }
 
