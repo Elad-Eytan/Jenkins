@@ -32,7 +32,7 @@ pipeline {
                 '''
                 sh 'echo "The Pipeline name is $JOB_NAME"'
                 sh 'echo "The Build number is $BUILD_NUMBER"'
-                env.FILE_TO_TEST = "${env.WORKSPACE}/app.txt"
+                FILE_TO_TEST = "${env.WORKSPACE}/app.txt"
                 sh 'python3 test.py "$FILE_TO_TEST" "Test"'
             }
         }
