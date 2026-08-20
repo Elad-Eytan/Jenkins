@@ -5,7 +5,8 @@ pipeline {
         APP_VERSION = '1.0'
         APP_NAME    = 'EladApp'
         DOCKER_REPO = 'vocvoc1'
-
+    }
+    
     stages {
         stage('Build') {
             steps {
