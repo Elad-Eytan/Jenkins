@@ -1,8 +1,7 @@
 import sys
-import os
 
-file_path = sys.argv[0]
-word_to_find = sys.argv[1]
+file_path = sys.argv[1]
+word_to_find = sys.argv[2]
 
 with open(file_path, "r") as file:
     content = file.read()
