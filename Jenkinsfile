@@ -28,10 +28,11 @@ pipeline {
 
         stage('Test') {
                 parallel {
-                    stage('File Stage'){
+                    stage('File Stage') {
                         sh 'echo "================<Test stage>=================="'
                         sh 'echo "The Pipeline name is $JOB_NAME"'
                         sh 'echo "The Build number is $BUILD_NUMBER"'
+                        
                         sh '''
                             if [ -f "app.txt" ]; then
                                 echo "File app.txt exists!!!"
@@ -41,11 +42,13 @@ pipeline {
                             fi
                            '''
                     }
+                }
                     stage('Build Info Stage'){
                         sh 'python3 test.py "$BUILD_FILE_PATH" "Build"'
                     }
                 }
             }
+        }
 
         stage('Deploy') {
             steps {
