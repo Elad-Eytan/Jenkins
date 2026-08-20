@@ -5,7 +5,7 @@ pipeline {
         APP_VERSION = '1.0'
         APP_NAME    = 'EladApp'
         DOCKER_REPO = 'vocvoc1'
-        FILE_TO_TEST = '\'
+        FILE_TO_TEST = '/'
     }
 
     stages {
