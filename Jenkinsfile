@@ -27,12 +27,11 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                sh 'echo "================<Test stage>=================="'
-                sh 'echo "The Pipeline name is $JOB_NAME"'
-                sh 'echo "The Build number is $BUILD_NUMBER"'
-                parallel{
+                parallel {
                     stage('File Stage'){
+                        sh 'echo "================<Test stage>=================="'
+                        sh 'echo "The Pipeline name is $JOB_NAME"'
+                        sh 'echo "The Build number is $BUILD_NUMBER"'
                         sh '''
                             if [ -f "app.txt" ]; then
                                 echo "File app.txt exists!!!"
