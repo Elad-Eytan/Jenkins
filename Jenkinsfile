@@ -5,7 +5,7 @@ pipeline {
         APP_VERSION = '1.0'
         APP_NAME    = 'EladApp'
         DOCKER_REPO = 'vocvoc1'
-        FILE_TO_TEST = '/'
+        FILE_TO_TEST = "${env.WORKSPACE}/deploy/app.txt"
     }
 
     stages {
@@ -32,7 +32,6 @@ pipeline {
                 '''
                 sh 'echo "The Pipeline name is $JOB_NAME"'
                 sh 'echo "The Build number is $BUILD_NUMBER"'
-                FILE_TO_TEST = "${env.WORKSPACE}/app.txt"
                 sh 'python3 test.py "$FILE_TO_TEST" "Test"'
             }
         }
