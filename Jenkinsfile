@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     stages {
-        stage('Build')
+        stage('Build') {
             steps {
                 sh 'echo "================<Build stage>=================="'
         }
@@ -15,6 +15,7 @@ pipeline{
                 sh 'echo "================<Deploy stage>=================="'
         }
     }
+
     post {
         always {
             sh 'echo "Cleaning up...'
