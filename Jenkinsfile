@@ -4,7 +4,7 @@ pipeline {
     environment {
         APP_VERSION     = '1.0'
         APP_NAME        = 'EladApp'
-        DOCKER_REPO     = 'vocvoc1'
+        DOCKER_REPO     = 'vocvoc1/'
         FILE_TO_TEST    = "${env.WORKSPACE}/app.txt"
         BUILD_FILE_PATH = "${env.WORKSPACE}/build-info.txt"
     }
@@ -67,7 +67,7 @@ pipeline {
     post {
         always {
             sh 'echo "Cleaning up..."'
-            deleteDir()
+            cleanWs()
         }
     }
 }

@@ -1,4 +1,5 @@
 import sys
+import os
 
 file_path = sys.argv[1]
 word_to_find = sys.argv[2]
