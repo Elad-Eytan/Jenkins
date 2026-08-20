@@ -1,11 +1,19 @@
 pipeline {
     agent any
 
+    environment {
+        APP_VERSION = '1.0'
+        APP_NAME    = 'EladApp'
+        DOCKER_REPO = 'vocvoc1'
+
     stages {
         stage('Build') {
             steps {
                 sh 'echo "================<Build stage>=================="'
                 sh 'echo "Test Text" >> app.txt'
+                sh 'echo "The App version is ${APP_VERSION}"'
+                sh 'echo "The App name is ${APP_NAME}"'
+                sh 'echo "The Docker repo is ${DOCKER_REPO}"'
             }
         }
 
@@ -20,6 +28,8 @@ pipeline {
                     exit 1
                 fi
                 '''
+                sh 'echo "The Pipeline name is ${env.JOB_NAME}"'
+                sh 'echo "The Build number is ${env.BUILD_NUMBER}"'
             }
         }
 
